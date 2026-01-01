@@ -4,18 +4,64 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #0b1220;
   color: white;
 }
 
-/* HERO */
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(11, 18, 32, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #6c63ff;
+}
+
+/* =========================
+   HERO
+   ========================= */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px;
+  padding: 120px 80px 80px; /* espaço pra navbar */
   min-height: 100vh;
 }
 
@@ -58,13 +104,21 @@ body {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  transition: 0.2s;
+}
+
+.verify-btn:hover {
+  background: #584fe0;
 }
 
 .hero-image img {
   width: 420px;
+  max-width: 100%;
 }
 
-/* FEATURES */
+/* =========================
+   FEATURES
+   ========================= */
 .features {
   background: #b11e1e;
   padding: 80px;
@@ -91,14 +145,32 @@ body {
   padding: 30px;
   border-radius: 10px;
 }
+
 /* =========================
-   MOBILE RESPONSIVE FIX
+   PLACEHOLDER SECTIONS
+   ========================= */
+#commands,
+#pricing,
+#support {
+  height: 100px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
    ========================= */
 @media (max-width: 900px) {
 
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
   .hero {
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 100px 20px 40px;
     text-align: center;
     min-height: auto;
   }
@@ -144,7 +216,6 @@ body {
     max-width: 420px;
   }
 
-  /* FEATURES */
   .features {
     padding: 60px 20px;
   }
