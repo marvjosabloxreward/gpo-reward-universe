@@ -91,3 +91,77 @@ body {
   padding: 30px;
   border-radius: 10px;
 }
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero h1 span {
+    font-size: 18px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .verify-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .verify-box input {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .verify-btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 35px;
+  }
+
+  .hero-image img {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  /* FEATURES */
+  .features {
+    padding: 60px 20px;
+  }
+
+  .features h2 {
+    font-size: 28px;
+  }
+
+  .features p {
+    font-size: 15px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+}
