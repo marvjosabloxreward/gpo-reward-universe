@@ -33,8 +33,17 @@
       </p>
 
       <div class="verify-box">
-        <input type="text" placeholder="Enter your Roblox username" />
-        <a href="/verify.html" class="verify-btn">
+        <input 
+          type="text" 
+          id="robloxInput"
+          placeholder="Enter your Roblox username" 
+        />
+
+        <a 
+          href="/verify.html" 
+          class="verify-btn disabled" 
+          id="verifyBtn"
+          onclick="return false;"
         >
           Get Verified Now
         </a>
@@ -114,17 +123,32 @@
       </div>
 
       <div class="metrics-image">
-        <!-- espaço para imagem -->
         <img src="/images/metrics.png" alt="Metrics Image">
       </div>
 
     </div>
   </section>
 
-  <!-- PLACEHOLDER SECTIONS (para navegação) -->
+  <!-- PLACEHOLDER SECTIONS -->
   <section id="commands"></section>
   <section id="pricing"></section>
   <section id="support"></section>
+
+  <!-- SCRIPT -->
+  <script>
+    const input = document.getElementById("robloxInput");
+    const button = document.getElementById("verifyBtn");
+
+    input.addEventListener("input", () => {
+      if (input.value.trim() !== "") {
+        button.classList.remove("disabled");
+        button.onclick = null;
+      } else {
+        button.classList.add("disabled");
+        button.onclick = () => false;
+      }
+    });
+  </script>
 
 </body>
 </html>
