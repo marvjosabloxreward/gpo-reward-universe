@@ -119,5 +119,11 @@
     }
   </script>
 
+<script>
+fetch("/api/me").then(res => {
+  if (!res.ok) window.location.href = "/";
+});
+</script>
+
 </body>
 </html>
